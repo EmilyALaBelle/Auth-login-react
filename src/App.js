@@ -11,10 +11,10 @@ export default function App() {
   return (
     <Routes>
       {user
-        ? <Profile />
+        ? <Profile user={user}/>
         : <>
-          <Route path="/signup" element={<Signup />} />
-          <Route path='*' element={<Login />} />
+          <Route path="/signup" element={<Signup setUser={setUser} />} />
+          <Route path='*' element={<Login setUser={setUser} />} />
         </>
       }
     </Routes>
